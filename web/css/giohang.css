@@ -1,0 +1,45 @@
+.btn-primary{
+    background-color: #f07b1d !important;
+    border-color: #ccc !important;
+}
+
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #033 !important;
+}
+.pay-price {
+    font-size: 24px;
+    color: #75bf97;
+    margin-left: 20px;
+}
+.align-cart{
+    line-height: 50px;
+}
+.list-product {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #333;
+    width: 100%;
+    margin-bottom: 20px;
+}
+table.list-product tr th{
+    line-height: 40px;
+}
+table.list-product tr td{
+    line-height: 60px;
+}
+a.glyphicon.glyphicon-plus{
+    background-color: #71be0f;
+    color: #333;
+}
+a.glyphicon.glyphicon-plus:hover{
+    color: #fff;
+}
+a.glyphicon.glyphicon-minus{
+    background-color: #71be0f;
+    color: #333;
+}
+a.glyphicon.glyphicon-minus:hover{
+    color: #fff;
+}

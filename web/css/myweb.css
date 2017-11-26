@@ -1,0 +1,222 @@
+.carousel-indicators .active{
+    background-color: #75BF97;
+}
+.carousel-indicators li {
+    border: 1px solid #033;
+}
+.btn-default {
+    color: #fff;
+    background-color: #333;
+    border-color: #ccc;
+}
+.btn-default:hover {
+    color: #333;
+    background-color: #75BF97;
+}
+.boxcart{
+    height: 60px;
+    line-height: 42px;
+    width: 260px;
+    float: left;
+    margin-top: 10px;
+}
+.boxcart a{
+    text-decoration: none;
+    color: #82c023;
+}
+.boxcart a:hover{
+    text-decoration: none;
+}
+.number-shop{
+    color: #fff;
+    background-color: #82c023;
+    text-align: center;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    font-size: 12px;
+    padding: 3px 7px;
+    margin-left: -12px;
+    vertical-align: 12px;
+}
+.navbar-default .navbar-nav>li>a{
+    font-family: Helvetica;
+    font-size: 14px;
+    color: white;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    background-color: #75BF97;
+}
+.navbar-default{
+    padding: 0;
+    margin: 0;
+}
+.navbar-form{
+    margin-left: 35px;
+}
+.container-fluid{
+    background-color: #75BF97;
+}
+.container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.col-md-3{
+    padding-left: 40px;
+}
+.mobile-menu{
+    background-color: #75BF97;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.navbar-nav>li>a{
+    color: white;
+}
+.nav.navbar-nav>li>a:hover{
+    color: #F3F781;
+}
+
+
+.menu.nav.navbar-nav>li>a:hover{
+    background-color: #333;
+    transition: all 0.5s;
+}
+.menu.nav.navbar-nav>li:hover a{
+    background-color: #333;
+    color: #F3F781;
+    transition: all 0.5s;
+}
+.menu.nav.navbar-nav li ul {
+    display: none;
+    border: solid 1px #CCC;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.menu.nav.navbar-nav li:hover ul{
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    background-color: #333;
+    color: #FFF;
+}
+.menu.nav.navbar-nav li ul a li{
+    padding: 10px;
+}
+.menu.nav.navbar-nav li ul a{
+    list-style: none;
+    color: #FFF;
+}
+.menu.nav.navbar-nav li ul a li:hover{
+    background-color: #F3F781;
+    color: #333;
+    text-decoration: none;
+}
+.menu.nav.navbar-nav li ul a:hover{
+    background-color: #F3F781;
+    color: #333;
+    text-decoration: none;
+}
+
+
+.imgright{
+    margin: 10px;
+}
+.item-title{
+    margin: 20px 0 0;
+    height: 50px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    font-family: 'Calibri';
+}
+.eitem{
+    height: 520px;
+    margin: 10px 10px;
+    position: relative;
+}
+.eitem .price-new{
+    color: #FF0040;
+    font-size: 20px;
+    font-weight: bold;
+}
+.eitem .price-old{
+    text-decoration-line: line-through;
+    font-size: 16px;
+    color: #aaaaaa;
+    font-weight: bold;
+}
+.sale-off{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #FF0040;
+}
+.add-to-cart{
+    border-radius: 5px;
+    border: 2px solid #f07b1d;
+    width: 80px;
+    height: 50px;
+    margin: 10px auto;
+    line-height: 50px;
+}
+.add-to-cart a:hover{
+    text-decoration: none;
+    color: #f07b1d;	
+}
+
+.row{
+    margin: 0
+}
+.tool-web{
+    margin: 0 auto;
+    width: 80%;
+    height: 80px;
+    background-color: #75BF97;
+    color: white;
+    padding:20px 10px;
+    font-size: 16px;
+    color: #000;
+}
+
+#footer{
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+}
+h1.title{
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 2px solid #75bf97;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1.title span {
+    font-size: 17px;
+    background: #75bf97 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    padding: 9px 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+    color: #f07b1d;
+}
+a:hover{
+    text-decoration: none;
+    color: #333;	
+}
+p{
+    margin: 0;
+    padding: 0;
+}

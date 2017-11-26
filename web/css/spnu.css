@@ -1,0 +1,40 @@
+ul.tab-cates {
+    margin-top: 14px;
+    height: 32px;
+}
+ul.tab-cates li {
+    margin: 15px 0 0 0;
+    padding: 0 15px;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #454545;
+    font-size: 17px;
+    font-weight: normal;
+    border-right: 1px solid #e2e2e2;
+    float: left;
+}
+ul.tab-cates li a{
+    text-decoration: none;
+    color: #75bf97;
+}
+h1.title{
+    float: left; 
+    text-transform: uppercase;
+    color: #1a1a1a ;
+    border-bottom: 2px solid #75bf97;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+}
+h1.title span {
+    font-size: 17px;
+    background: #75bf97 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    padding: 9px 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+.tabcontent{
+    border-bottom: 2px solid #75bf97;
+    height: 49px;
+}

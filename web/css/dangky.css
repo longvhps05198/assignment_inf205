@@ -1,0 +1,23 @@
+.register-content h2 {
+    text-transform: uppercase;
+    color: #75bf97;
+    border-bottom: 1px dotted #454545;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.col-md-8 .col-md-offset-2{
+	font-size: 16px;
+	margin-left: 0;
+}
+.col-md-8{
+	width: 84%;
+	margin-left: 8%;
+}
+.form-group .col-sm-9{
+    width: 60%;
+}
+
+.col-sm-offset-4 {
+    margin-left: 46%;
+}

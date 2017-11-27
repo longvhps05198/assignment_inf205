@@ -5,7 +5,6 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-<%@page import="Model.Sanphamnam"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -190,7 +189,7 @@
                             <c:param name="btnAction" value="Deletespnam" />
                             <c:param name="ID" value="${rows.id}" />
                         </c:url>
-                      <td><a href='${del}' class='glyphicon glyphicon-remove' style='border: 1px solid #f07b1d; padding: 5px'></a>
+                      <td><a href='${del}' class='glyphicon glyphicon-remove' onclick="return confirm('Bạn có chắc muốn xóa?')" style='border: 1px solid #f07b1d; padding: 5px'></a>
                         <c:url var="up" value="Controller_Manage">
                             <c:param name="btnAction" value="Show_update" />
                             <c:param name="ID" value="${rows.id}" />

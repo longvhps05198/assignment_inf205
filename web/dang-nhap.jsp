@@ -32,7 +32,7 @@
 	      TÀI KHOẢN
 	    </a>
 	    <a href="" class="list-group-item">Đăng nhập</a>
-	    <a href="dang-ky.html" class="list-group-item">Đăng ký</a>
+	    <a href="dang-ky.jsp" class="list-group-item">Đăng ký</a>
 	  </div>
 	</div>
 

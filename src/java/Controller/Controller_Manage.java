@@ -249,8 +249,6 @@ public class Controller_Manage extends HttpServlet {
                         Sanpham spnam = new Sanpham(0, TenSP, GiaGoc, GiaKM, Image, CK, PL, MT, KD, MS, CL, XX);
                         boolean result = spnam.insertRecord();
                         String url = "Controller_Manage?btnAction=Showspnam";
-                        //Ở dưới đây nếu ta đi thẳng tới trang SanPhamNuView thì nó tuy đã cập nhật nhưng ko show ra
-                        //Phải connect data rồi load lại 1 lần nữa mới được
                         RequestDispatcher rd = request.getRequestDispatcher(url);
                         rd.forward(request, response);
                     }
@@ -258,8 +256,6 @@ public class Controller_Manage extends HttpServlet {
                         Sanpham spnu = new Sanpham(0, TenSP, GiaGoc, GiaKM, Image, CK, PL, MT, KD, MS, CL, XX);
                         boolean result = spnu.insertRecord();
                         String url = "Controller_Manage?btnAction=Show";
-                        //Ở dưới đây nếu ta đi thẳng tới trang SanPhamNuView thì nó tuy đã cập nhật nhưng ko show ra
-                        //Phải connect data rồi load lại 1 lần nữa mới được
                         RequestDispatcher rd = request.getRequestDispatcher(url);
                         rd.forward(request, response);
                     }

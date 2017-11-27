@@ -110,12 +110,6 @@
                       <a href="${show}">Sản phẩm</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-file text-info"></span>
-                      <a href="">Mô tả chi tiết</a>
-                    </td>
-                  </tr>
                 </table>
               </div>
             </div>
@@ -142,121 +136,10 @@
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="" style="color: #0E4EB5">Sản phẩm</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-file text-info"></span>
-                      <a href="">Mô tả chi tiết</a>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th">
-                  </span>Tin tức</a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <a href="">Orders</a>
-                      <span class="label label-success">$ 320</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="">Invoices</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="">Shipments</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="">Tex</a>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-user">
-                  </span>Tài khoản</a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <a href="">Change Password</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="">Notifications</a> <span class="label label-info">5</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="">Import/Export</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-trash text-danger"></span>
-                      <a href="" class="text-danger">Delete Account</a>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-file">
-                  </span>Nội dung</a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-usd"></span>
-                      <a href="">Sales</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-user"></span>
-                      <a href="">Customers</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-tasks"></span>
-                      <a href="">Products</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-shopping-cart"></span>
-                      <a href="">Shopping Cart</a>
+                      <c:url var="show" value="Controller_Manage">
+                          <c:param name="btnAction" value="Showspnam" />
+                      </c:url>
+                      <a href="${show}" style="color: #0E4EB5">Sản phẩm</a>
                     </td>
                   </tr>
                 </table>

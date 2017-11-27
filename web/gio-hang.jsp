@@ -131,7 +131,7 @@
             <div class="button text-right">
               <a class="btn btn-default" href="javascript: location.replace(document.referrer);">Tiếp tục mua hàng</a>
               <!-- or <a class="btn btn-default" href="javascript: window.location=document.referrer;">Tiếp tục mua hàng</a>-->
-              <a class="btn btn-primary" href="thanh-toan.html">Thanh toán</a>
+              <a class="btn btn-primary" href="404.jsp">Thanh toán</a>
             </div>
           </div>
         </div>

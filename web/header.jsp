@@ -95,7 +95,7 @@
                         <a href="san-pham-nam.jsp?trang=1"><li>Thời trang nam</li></a>
                       </ul>
                     </li>
-                    <li class="level0"><a class="" href="#"><span>Tin tức</span></a></li>
+                    <li class="level0"><a class="" href="404.jsp"><span>Tin tức</span></a></li>
                     <li class="level0"><a class="" href="lien-he.jsp"><span>Liên hệ</span></a></li>
                   </ul>
                 </nav>

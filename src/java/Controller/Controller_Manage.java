@@ -9,8 +9,15 @@ import Model.CartBean;
 import Model.Sanpham;
 import Model.Sanphamnam;
 import Model.Sanphamnu;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.channels.FileChannel;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +25,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -50,9 +61,9 @@ public class Controller_Manage extends HttpServlet {
                     HttpSession session = request.getSession(true);
                     Sanpham sp = new Sanpham();
                     Sanpham[] list = sp.getConnectSP("select * from SANPHAM join CHITIETSP on SANPHAM.ID = CHITIETSP.ID "
-                      + "where Phanloai like N'%Áo nữ%' or "
-                      + "Phanloai like N'%Set đồ%' or "
-                      + "Phanloai like N'%Đầm & Váy nữ%'");
+                            + "where Phanloai like N'%Áo nữ%' or "
+                            + "Phanloai like N'%Set đồ%' or "
+                            + "Phanloai like N'%Đầm & Váy nữ%'");
                     session.setAttribute("DATA", list);
                     RequestDispatcher rd = request.getRequestDispatcher("Admin/SanPhamNuView.jsp");
                     rd.forward(request, response);
@@ -63,8 +74,8 @@ public class Controller_Manage extends HttpServlet {
                     HttpSession session = request.getSession(true);
                     Sanpham sp = new Sanpham();
                     Sanpham[] list = sp.getConnectSP("select * from SANPHAM join CHITIETSP on SANPHAM.ID = CHITIETSP.ID "
-                      + "where Phanloai like N'%Áo nam%' or "
-                      + "Phanloai like N'%Quần nam%'");
+                            + "where Phanloai like N'%Áo nam%' or "
+                            + "Phanloai like N'%Quần nam%'");
                     session.setAttribute("DATA1", list);
                     RequestDispatcher rd = request.getRequestDispatcher("Admin/SanPhamNamView.jsp");
                     rd.forward(request, response);
@@ -236,15 +247,51 @@ public class Controller_Manage extends HttpServlet {
                     String GiaGoc = request.getParameter("txtGiagoc");
                     String GiaKM = request.getParameter("txtGiakhuyenmai");
                     String CK = request.getParameter("txtChietkhau");
-                    String Image = request.getParameter("txtImage");
+
                     String PL = request.getParameter("txtPhanloai");
                     String MT = request.getParameter("txtMota");
                     String KD = request.getParameter("txtKieudang");
                     String MS = request.getParameter("txtMausac");
                     String CL = request.getParameter("txtChatlieu");
                     String XX = request.getParameter("txtXuatxu");
-
+                    
                     String GT = request.getParameter("txtGioitinh");
+                    String Image = request.getParameter("txtImage");
+                    
+                    //String Image = null;
+                    //xử lý upload file khi người dùng nhấn nút thực hiện
+                    //Code bên dưới vẫn lỗi ko thể upload ảnh
+                    //Start of Upload
+                    DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+                    ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
+                    try {
+                        List<FileItem> fileItems = upload.parseRequest(request);
+                        for (FileItem fileItem : fileItems) {
+                            if (!fileItem.isFormField()) {
+                                // xử lý file
+                                String nameimg = fileItem.getName();
+                                if (!nameimg.equals("")) {
+                                    String dirUrl = request.getServletContext()
+                                            .getRealPath("") + File.separator + "images";
+                                    File dir = new File(dirUrl);
+                                    if (!dir.exists()) {
+                                        dir.mkdir();
+                                    }
+                                    String fileImg = dirUrl + File.separator + nameimg;
+                                    File file = new File(fileImg);
+                                    try {
+                                        fileItem.write(file);
+                                        Image = fileImg;
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+                    } catch (FileUploadException e) {
+                        e.printStackTrace();
+                    }
+                    // End of Upload
                     if (GT.equals("Nam")) {
                         Sanpham spnam = new Sanpham(0, TenSP, GiaGoc, GiaKM, Image, CK, PL, MT, KD, MS, CL, XX);
                         boolean result = spnam.insertRecord();
@@ -271,7 +318,7 @@ public class Controller_Manage extends HttpServlet {
                     HttpSession session = request.getSession(true);
                     String text = request.getParameter("txtSearch");
                     Sanpham sp = new Sanpham();
-                    
+
                     Sanpham[] listsp = sp.getConnectSP("select * from SANPHAM where Tensanpham like N'%" + text + "%'");
                     session.setAttribute("LIST", listsp);
                     RequestDispatcher rd = request.getRequestDispatcher("tim-kiem.jsp");

@@ -105,7 +105,7 @@
                 </a>
               </h1>
               <ul class="tab-cates" style="list-style-type: none ">
-                <li><a href="sp-set-do-nu.jsp?trang=1">Set đồ</a></li>
+                <li><a href="sp-set-do-nu.jsp?trang=1">Set đồ nữ</a></li>
                 <li><a href="sp-ao-nu.jsp?trang=1">Áo nữ</a></li>
                 <li><a href="sp-dam-nu.jsp?trang=1">Đầm & Váy nữ</a></li>
               </ul>

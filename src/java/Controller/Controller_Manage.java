@@ -7,17 +7,8 @@ package Controller;
 
 import Model.CartBean;
 import Model.Sanpham;
-import Model.Sanphamnam;
-import Model.Sanphamnu;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.channels.FileChannel;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -53,6 +40,7 @@ public class Controller_Manage extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+
         PrintWriter out = response.getWriter();
         try {
             String action = request.getParameter("btnAction");
@@ -242,73 +230,7 @@ public class Controller_Manage extends HttpServlet {
                     rd.forward(request, response);
                     break;
                 }
-                case "Insert": {
-                    String TenSP = request.getParameter("txtTensanpham");
-                    String GiaGoc = request.getParameter("txtGiagoc");
-                    String GiaKM = request.getParameter("txtGiakhuyenmai");
-                    String CK = request.getParameter("txtChietkhau");
 
-                    String PL = request.getParameter("txtPhanloai");
-                    String MT = request.getParameter("txtMota");
-                    String KD = request.getParameter("txtKieudang");
-                    String MS = request.getParameter("txtMausac");
-                    String CL = request.getParameter("txtChatlieu");
-                    String XX = request.getParameter("txtXuatxu");
-                    
-                    String GT = request.getParameter("txtGioitinh");
-                    String Image = request.getParameter("txtImage");
-                    
-                    //String Image = null;
-                    //xử lý upload file khi người dùng nhấn nút thực hiện
-                    //Code bên dưới vẫn lỗi ko thể upload ảnh
-                    //Start of Upload
-                    DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-                    ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
-                    try {
-                        List<FileItem> fileItems = upload.parseRequest(request);
-                        for (FileItem fileItem : fileItems) {
-                            if (!fileItem.isFormField()) {
-                                // xử lý file
-                                String nameimg = fileItem.getName();
-                                if (!nameimg.equals("")) {
-                                    String dirUrl = request.getServletContext()
-                                            .getRealPath("") + File.separator + "images";
-                                    File dir = new File(dirUrl);
-                                    if (!dir.exists()) {
-                                        dir.mkdir();
-                                    }
-                                    String fileImg = dirUrl + File.separator + nameimg;
-                                    File file = new File(fileImg);
-                                    try {
-                                        fileItem.write(file);
-                                        Image = fileImg;
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
-                        }
-                    } catch (FileUploadException e) {
-                        e.printStackTrace();
-                    }
-                    // End of Upload
-                    if (GT.equals("Nam")) {
-                        Sanpham spnam = new Sanpham(0, TenSP, GiaGoc, GiaKM, Image, CK, PL, MT, KD, MS, CL, XX);
-                        boolean result = spnam.insertRecord();
-                        String url = "Controller_Manage?btnAction=Showspnam";
-                        RequestDispatcher rd = request.getRequestDispatcher(url);
-                        rd.forward(request, response);
-                    }
-                    if (GT.equals("Nữ")) {
-                        Sanpham spnu = new Sanpham(0, TenSP, GiaGoc, GiaKM, Image, CK, PL, MT, KD, MS, CL, XX);
-                        boolean result = spnu.insertRecord();
-                        String url = "Controller_Manage?btnAction=Show";
-                        RequestDispatcher rd = request.getRequestDispatcher(url);
-                        rd.forward(request, response);
-                    }
-
-                    break;
-                }
                 case "Showinsert": {
                     RequestDispatcher rd = request.getRequestDispatcher("Admin/SanPhamInsert.jsp");
                     rd.forward(request, response);
@@ -333,7 +255,7 @@ public class Controller_Manage extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

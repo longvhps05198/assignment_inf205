@@ -151,7 +151,7 @@
           </h4>
         </div>
         <div class="col-md-12" style="width: 100%;border: 1px solid #e3e3e3">
-          <form action="Controller_Manage" method="post">
+          <form action="<%=request.getContextPath()%>/uploadFile" method="post" enctype="multipart/form-data">
             <h4 style="margin:20px 10px 50px 10px;border-bottom: 1px solid #e3e3e3">THÔNG TIN SẢN PHẨM</h4>
             <div class="col-md-6" style="width: 60%">
 
@@ -175,10 +175,10 @@
                 <input type="text" name="txtChietkhau" value="" style="width: 74%">
               </div>
 
-              <div class="row" style="margin:10px 10px 10px 0">
+<!--              <div class="row" style="margin:10px 10px 10px 0">
                 <div class="label-up">Hình ảnh</div>
                 <input type="text" id="urlimg" name="txtImage" value="" style="width: 74%" />
-              </div>
+              </div>-->
               
               <div class="row" style="margin:10px 10px 10px 0">
                 <div class="label-up">Giới tính</div>
@@ -274,16 +274,16 @@
 
 </html>
 <script>
-    $('input[type="file"]').change(function () {
-        $('#urlimg').val($(this).val());
-        $("#show-img").attr("src", $(this).val());
-    });
+//    $('input[type="file"]').change(function () {
+//        $('#urlimg').val($(this).val());
+//        $("#show-img").attr("src", $(this).val());
+//    });
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#show-img').attr('src', e.target.result);
-                $('#urlimg').val((window.URL || window.webkitURL).createObjectURL(file));
+//                $('#urlimg').val((window.URL || window.webkitURL).createObjectURL(file));
             }
             reader.readAsDataURL(input.files[0]);
         }

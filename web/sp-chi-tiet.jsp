@@ -39,7 +39,6 @@
       <div class="col-md-12" style="width: 90%;background-color: #fff;margin:20px 5%;padding: 0;border: 1px solid #e3e3e3;">
         <div class="col-md-5" style="width: 40%">
           <%!
-              Connection con = new ConnectionData().connectData("Assignment_INF205_PS05198");
               String id;
               String tensanpham;
               String giagoc;
@@ -71,7 +70,7 @@
                 kieudang = list[0].getKieuDang();
                 mausac = list[0].getMauSac();
                 chatlieu = list[0].getChatLieu();
-                xuatxu = list[0].getXuatXu();                
+                xuatxu = list[0].getXuatXu();
             %>
             <img src="<%=urlimage%>" width="100%">
           </div>

@@ -122,9 +122,6 @@
                   </div>
                 </div>
                 <%}
-                    rs.close();
-                    stm.close();
-                    con.close();
                 %>
               </div>
               <div class="row" style="margin: 20px 0">

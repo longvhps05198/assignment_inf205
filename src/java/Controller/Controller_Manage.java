@@ -241,7 +241,7 @@ public class Controller_Manage extends HttpServlet {
                     String text = request.getParameter("txtSearch");
                     Sanpham sp = new Sanpham();
 
-                    Sanpham[] listsp = sp.getConnectSP("select * from SANPHAM where Tensanpham like N'%" + text + "%'");
+                    Sanpham[] listsp = sp.getConnectSP("select * from SANPHAM join CHITIETSP on SANPHAM.ID = CHITIETSP.ID where Tensanpham like N'%" + text + "%'");
                     session.setAttribute("LIST", listsp);
                     RequestDispatcher rd = request.getRequestDispatcher("tim-kiem.jsp");
                     rd.forward(request, response);

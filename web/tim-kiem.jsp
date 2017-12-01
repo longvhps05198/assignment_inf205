@@ -14,9 +14,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Giỏ hàng</title>
+    <title>Tìm kiếm sản phẩm</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/myweb.css">
+    <link rel="stylesheet" href="css/spnu.css">
     <link rel="stylesheet" href="css/giohang.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
 
       <div class="col-md-12" style="width: 90%;margin-left: 5%; margin-top: 10px;margin-bottom: 100px">
         <p><a href="index.jsp" style="color: #333">Trang chủ</a> &raquo; <a href="" style="color: #75BF97">Kết quả</a></p>
-        <h1 class="title"><span>KẾT QUẢ TÌM KIẾM</span></h1>
+        <div class="row"><h1 class="title"><span>KẾT QUẢ TÌM KIẾM</span></h1></div>
 
         <div class="row">
           <form action="Controller_Manage">
@@ -44,10 +45,10 @@
                 <c:set var="count" value="0" />
                 <c:forEach var="rows" items="${list}">
                     <c:set var="count" value="${count + 1}" />
-                    <div class="col-xs-6 col-md-3" style="padding: 0; height: 450px; text-align: center;margin-bottom: 40px">
-                      <div class="eitem">
+                    <div class="col-xs-6 col-md-3" style="padding: 0; height: 530px; text-align: center;margin-bottom: 40px">
+                      <div class="eitem thumbnail">
                         <div class="sale-off"><span>&nbsp;${rows.chietKhau}&nbsp;</span></div>
-                        <a href="sp-chi-tiet.jsp?ID=${rows.id}&PhanLoai=nu" class="thumbnail">
+                        <a href="sp-chi-tiet.jsp?ID=${rows.id}&PhanLoai=nu">
                           <img src="${rows.image}" alt="..." class="eimg">
                         </a>
                         <div class="item-title">${rows.tenSanPham}</div>
@@ -77,10 +78,10 @@
                 <c:set var="count" value="0" />
                 <c:forEach var="rows" items="${list1}">
                     <c:set var="count" value="${count + 1}" />
-                    <div class="col-xs-6 col-md-3" style="padding: 0; height: 450px; text-align: center;margin-bottom: 40px">
-                      <div class="eitem">
+                    <div class="col-xs-6 col-md-3" style="padding: 0; height: 530px; text-align: center;margin-bottom: 40px">
+                      <div class="eitem thumbnail">
                         <div class="sale-off"><span>&nbsp;${rows.chietKhau}&nbsp;</span></div>
-                        <a href="sp-chi-tiet.jsp?ID=${rows.id}&PhanLoai=nam" class="thumbnail">
+                        <a href="sp-chi-tiet.jsp?ID=${rows.id}&PhanLoai=nam">
                           <img src="${rows.image}" alt="..." class="eimg">
                         </a>
                         <div class="item-title">${rows.tenSanPham}</div>
